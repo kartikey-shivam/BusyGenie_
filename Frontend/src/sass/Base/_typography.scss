@@ -1,0 +1,119 @@
+.primary-heading {
+  // font-family: 'Moon Dance', cursive;
+  font-family: kingsOfThieves, sans-serif;
+  font-size: 3rem;
+  // font-style: italic;
+  // text-transform: uppercase;
+  font-weight: 200;
+  // background-color: white;
+  // text-transform: uppercase;
+  margin-top: 2.5rem;
+  margin-left: 4rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  animation: opacity 3s ease-out;
+}
+
+.or {
+  margin: 0.5rem 0 0.5rem 0;
+  padding-left: 46.5%;
+  align-items: center;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: 1rem;
+  animation: opacity 3s ease-out;
+}
+
+.signup-box {
+  // background-color: blueviolet;
+  width: 35%;
+  height: 80%;
+  position: absolute;
+  justify-self: flex-start;
+  align-self: flex-end;
+  transform: translateX(-165%) translateY(-1%) rotate(-8deg);
+  &_image {
+    width: 100%;
+    height: 100%;
+    animation: signupImg 2s ease-out;
+  }
+}
+
+.signin-box {
+  transform: translateX(165%) translateY(-1%) rotateY(180deg) rotate(-8deg);
+}
+
+.heading_box {
+  // background-color: aqua;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 3rem;
+  width: 100%;
+  &-imgbox {
+    // background-color: blue;
+    height: 2rem;
+    padding-left: 0.5rem;
+  }
+  &-img {
+    height: 100%;
+    width: 100%;
+  }
+  &-img_TL {
+    transform: rotate(-90deg);
+  }
+  &-img_TN {
+    transform: translateX(-1.8rem) translateY(0.1rem);
+    height: 80%;
+  }
+  &-img_SWL {
+    height: 90%;
+  }
+  &-img_CL {
+    height: 80%;
+  }
+}
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    $color-grey-light-1,
+    $color-grey-light-2
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+}
+.tertiary_heading {
+  // background-color: royalblue;
+  font-size: 1rem;
+  align-self: flex-start;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-family: kingsOfThieves;
+}
+
+.other_info-heading {
+  margin-bottom: 1%;
+  font-family: kingsOfThieves;
+  font-size: 1.5rem;
+}

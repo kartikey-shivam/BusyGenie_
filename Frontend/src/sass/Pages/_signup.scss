@@ -1,0 +1,78 @@
+.backimg {
+  height: 90vh;
+  width: 95.5%;
+  position: absolute;
+  // background-image: linear-gradient(
+  //   to right bottom,
+  //   rgba(38, 38, 39, 0.2),
+  //   rgba(0, 0, 0, 0.733)
+  // );
+}
+
+.signup_page {
+  // height: 100vh;
+  // margin-top: 0;
+  background-size: cover;
+  // position: relative;
+}
+
+.signup {
+  background-color: rgb(66, 91, 90);
+  border-radius: 2%;
+  height: 80vh;
+  width: 60%;
+  margin: 2% auto;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  &_container {
+    height: 100%;
+    width: 66%;
+    background-color: white;
+    border-radius: 5% 2% 2% 5%;
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-end;
+    // align-items: center;
+    animation: signupCon 1s ease-out;
+  }
+}
+
+.signin_text {
+  // background-color: blueviolet;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  font-size: 2rem;
+  text-decoration-line: underline;
+  animation: opacity 3s ease-out;
+  &_1 {
+    font-size: 1.5rem;
+    &:hover {
+      color: blue;
+      cursor: pointer;
+    }
+  }
+}
+
+.signup_text {
+  // display: inline-block;
+  //   background-color: aqua;
+  font-size: 1.5rem;
+  color: white;
+  height: 40%;
+  width: 250%;
+  transform: translateX(50%) translateY(20%);
+  animation: opacity 5s ease-out;
+  &-1 {
+    transform: translateX(-80%) translateY(20%);
+  }
+}
+
+.signin {
+  display: flex;
+  justify-content: flex-start;
+  &_container {
+    border-radius: 2% 5% 5% 2%;
+  }
+}

@@ -1,0 +1,31 @@
+.calender {
+  //   background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: kingsOfThieves;
+  &_heading {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    // text-transform: uppercase;
+    // background-color: aqua;
+  }
+  // margin-top: 15%;
+  margin-bottom: 10%;
+  &-info {
+    // background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &-main {
+    height: 80vh;
+    width: 90%;
+    margin-top: 2%;
+    background-color: rgba(192, 161, 60, 0.8);
+    // border: 2px solid black;
+    // border-radius: 2%;
+  }
+}

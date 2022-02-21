@@ -1,0 +1,71 @@
+.form {
+  margin-left: 4rem;
+  margin-top: 3%;
+  animation: opacity 3s ease-out;
+  &-signin {
+    margin-top: 10%;
+  }
+  &_grp:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  &_grp-signin:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  &_grp {
+    font-family: "Comforter", cursive;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    margin: 5%;
+    width: 100%;
+    @include respond(tab-port) {
+    }
+
+    @include respond(phone) {
+      font-size: 0.6rem;
+    }
+    // text-transform: uppercase;
+  }
+  &_input {
+    padding: 0.5rem 1rem;
+    color: inherit;
+    font-size: 1.5rem;
+    display: block;
+    width: 84%;
+    // background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 0px;
+    border: none;
+    border-bottom: 2px solid rgba($color: #000000, $alpha: 0.5);
+    // box-shadow: 0px .5px 1px black;
+    &-1 {
+      width: 100%;
+    }
+    &:hover {
+      border-bottom: 2px solid rgb(20, 82, 214);
+    }
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid rgb(63, 180, 63);
+    }
+    &:focus:invalid {
+      border-bottom: 2px solid rgb(228, 109, 30);
+    }
+    &::-webkit-input-placeholder {
+      color: grey;
+      // font-family: "Comforter", cursive;
+    }
+  }
+  &_lable {
+    display: block;
+    margin-left: 1rem;
+    margin-top: 0.2rem;
+    font-weight: 500;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+    // font-family: "Times New Roman", Times, serif;
+  }
+  &_input:placeholder-shown + &_lable {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-2rem);
+  }
+}

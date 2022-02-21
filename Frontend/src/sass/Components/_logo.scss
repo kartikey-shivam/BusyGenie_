@@ -1,0 +1,90 @@
+.logo {
+  &_signin {
+    // background-color: seashell;
+    margin: 2% 0;
+  }
+  &_signup {
+    // background-color: salmon;
+    height: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0rem 5rem;
+    animation: opacity 3s ease-out;
+    &-google {
+      height: 100%;
+      // width: 10rem;
+      padding: 5px;
+      // background-color: khaki;
+      display: flex;
+      align-items: center;
+      // border: 1px solid black;
+      border-radius: 5px;
+      &-img {
+        // padding: .2rem;
+        justify-self: right;
+        width: 1.8rem;
+        &:hover {
+          scale: 1.1;
+        }
+      }
+    }
+    &-facebook {
+      height: 100%;
+      // width: 10.5rem;
+      padding: 5px;
+      // background-color: khaki;
+      display: flex;
+      align-items: center;
+      // border: 1px solid black;
+      border-radius: 5px;
+      &-img {
+        // padding: .2rem;
+        width: 2rem;
+        &:hover {
+          scale: 1.1;
+        }
+      }
+    }
+  }
+}
+
+.main_logo {
+  // background-color: aqua;
+  width: 8%;
+  height: 13%;
+  justify-items: flex-start;
+  align-items: flex-start;
+  transform: translateX(-330%);
+  &-signin {
+    // background-color: springgreen;
+    width: 8%;
+    height: 13%;
+    transform: translateX(330%);
+    &_image {
+      padding: 4px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &-image {
+    animation: signupLoad 4s ease-out;
+    padding: 4px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.logo {
+  // background-color: crimson;
+  padding: 0;
+  height: 100%;
+  width: 10%;
+  transform: translateX(-31rem);
+  &_img {
+    // background-image: url("../../src/images/logo");
+    transform: translateY(3%);
+    width: 120%;
+  }
+}

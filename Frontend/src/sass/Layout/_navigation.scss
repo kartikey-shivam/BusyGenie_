@@ -1,0 +1,302 @@
+// @font-face {
+//   font-family: oldnewspaper;
+//   src: url("./fonts/OldNewspaperTypes.ttf");
+// }
+// .navbar {
+//   background-color: black;
+//   height: 8vh;
+//   padding: 0.5%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   &-list {
+//     display: none;
+//   }
+//   &_content {
+//     // background-color: chartreuse;
+//     display: flex;
+//     justify-content: flex-end;
+//     align-items: center;
+//     &_item {
+//       // margin: 5px;
+//       margin: 0 1.5rem;
+//       background-color: black;
+//       // font-family: "Comforter", cursive;
+//       // text-transform: uppercase;
+//       // font-size: 15px;
+//       // letter-spacing: 1.5px;
+//       padding: 2px;
+//       width: 9%;
+//       display: flex;
+//       justify-content: center;
+//       color: rgb(190, 154, 54);
+//       cursor: pointer;
+//       font-family: oldnewpaper;
+//       &:hover {
+//         background-color: rgb(190, 154, 54);
+//         color: white;
+//       }
+//       &:active {
+//         transform: translateY(1px);
+//       }
+//       &-btn {
+//         margin-left: 2rem;
+//         margin-right: 1.5rem;
+//         padding: 2px;
+//         border-radius: 2px;
+//         border: 2px solid black;
+//         box-shadow: 0 1px 4px rgba(12, 11, 11, 0.884);
+//         &:hover {
+//           cursor: pointer;
+//           transform: translateY(-1px);
+//         }
+//         &:active {
+//           transform: translateY(2px);
+//         }
+//       }
+//     }
+//   }
+// }
+.navigation {
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    background-color: $color-white;
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    border-radius: 50%;
+    z-index: 2000;
+    box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
+    text-align: center;
+    cursor: pointer;
+
+    @include respond(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
+
+    @include respond(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
+  }
+
+  &__background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    background-image: radial-gradient($primary-color_light, $primary-color);
+    z-index: 1000;
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+
+    @include respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
+  }
+
+  &__nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+
+    opacity: 0;
+    width: 0;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__item {
+    margin: 1rem;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: 300;
+      padding: 1rem 2rem;
+      color: $color-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        $color-white 50%
+      );
+      background-size: 220%;
+      transition: all 0.4s;
+
+      span {
+        margin-right: 1.5rem;
+        display: inline-block;
+      }
+    }
+
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: $primary-color;
+      transform: translateX(1rem);
+    }
+  }
+
+  //FUNCTIONALITY
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    width: 100%;
+  }
+
+  //ICON
+  &__icon {
+    position: relative;
+    margin-top: 3.5rem;
+
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-grey-dark-3;
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      top: -0.8rem;
+    }
+    &::after {
+      top: 0.8rem;
+    }
+  }
+
+  &__button:hover &__icon::before {
+    top: -1rem;
+  }
+
+  &__button:hover &__icon::after {
+    top: 1rem;
+  }
+
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+}
+// @media screen and (max-width: 1110px) {
+//   .navbar {
+//     &_content {
+//       // display: none;
+//     }
+//   }
+// }
+// @media screen and (max-width: 910px) {
+//   .navbar {
+//     &_content {
+//       justify-content: space-evenly;
+//       &_item {
+//         padding: 1px;
+//         width: 8%;
+//         font-size: 0.6rem;
+//       }
+//     }
+//   }
+// }
+// @media screen and (max-width: 600px) {
+//   .navbar {
+//     width: 100%;
+//     display: none;
+//     // background: blue;
+//     justify-content: flex-end;
+//     &-list {
+//       display: flex;
+//       float: right;
+//       position: absolute;
+//       right: 0;
+//       width: 2rem;
+//       height: 5vh;
+//       // height: 100%;
+//       justify-content: flex-end;
+//       padding: 3px;
+//       // align-items: center;
+//       background: white;
+//       z-index: 2000;
+//       // margin-bottom: 5%;
+//       &_con {
+//         position: absolute;
+//         right: 0;
+//         top: 0vh;
+//         height: 100vh;
+//         width: 15rem;
+//         background-color: rgba($color: #000000, $alpha: 0.5);
+//         z-index: 1000;
+//       }
+//       &_img {
+//         height: 100%;
+//         width: 100%;
+//       }
+//     }
+//     &_content {
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: flex-start;
+//       height: 100%;
+//       padding: 10% 0;
+//       // width: 50%;
+//       &_item {
+//         // background-color: aqua;
+//         width: 100%;
+//         height: 5%;
+//         display: flex;
+//         align-items: center;
+//         margin: 10% 0;
+//       }
+//     }
+//   }
+// }
